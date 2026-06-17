@@ -1,0 +1,22 @@
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  {% if page.lang == 'ko' %}
+    {% if page.is_home %}
+      <a href="#about">소개</a>
+      <a href="#projects">프로젝트</a>
+    {% else %}
+      <a href="{{ '/' | relative_url }}">홈</a>
+    {% endif %}
+    <a href="{{ '/projects/Photo-Selector/' | relative_url }}">Photo Selector</a>
+    <a href="{{ page.lang_en_url | default: '/en/' | relative_url }}">English</a>
+  {% else %}
+    {% if page.is_home %}
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+    {% else %}
+      <a href="{{ '/en/' | relative_url }}">Home</a>
+    {% endif %}
+    <a href="{{ '/en/projects/Photo-Selector/' | relative_url }}">Photo Selector</a>
+    <a href="{{ page.lang_ko_url | default: '/' | relative_url }}">Korean</a>
+  {% endif %}
+</div>

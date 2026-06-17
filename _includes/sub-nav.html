@@ -1,0 +1,17 @@
+<!-- Sub Navigation -->
+<nav class="sub-nav" role="navigation" aria-label="Project links">
+  <div class="nav-container">
+    {% if page.lang == 'ko' %}
+      <a href="#features">기능</a>
+      <a href="#screenshots">스크린샷</a>
+      <a href="#download">다운로드</a>
+    {% else %}
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#download">Download</a>
+    {% endif %}
+    <a href="{{ '/projects/Photo-Selector/wiki.html' | relative_url }}">Wiki</a>
+    <a href="{{ '/projects/Photo-Selector/Privacy_Policy/' | relative_url }}">Privacy Policy</a>
+    <a href="{{ '/projects/Photo-Selector/Support/' | relative_url }}">Support</a>
+  </div>
+</nav>

@@ -1,0 +1,20 @@
+<script>
+  // Mobile nav toggle
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('is-open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileNav.setAttribute('aria-hidden', !isOpen);
+  });
+
+  // Dropdown aria-expanded
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdown = document.querySelector('.dropdown');
+  if (dropdown && dropdownToggle) {
+    dropdown.addEventListener('mouseenter', () => dropdownToggle.setAttribute('aria-expanded', 'true'));
+    dropdown.addEventListener('mouseleave', () => dropdownToggle.setAttribute('aria-expanded', 'false'));
+    dropdown.addEventListener('focusin', () => dropdownToggle.setAttribute('aria-expanded', 'true'));
+    dropdown.addEventListener('focusout', () => dropdownToggle.setAttribute('aria-expanded', 'false'));
+  }
+</script>

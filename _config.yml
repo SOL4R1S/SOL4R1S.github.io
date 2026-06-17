@@ -1,0 +1,34 @@
+# Jekyll Configuration for SOL4R1S Portfolio
+# GitHub Pages auto-builds this site
+
+title: "SOL4R1S"
+description: "Developer Portfolio"
+baseurl: ""                    # Repository is <username>.github.io
+url: "https://sol4r1s.github.io"
+lang: "ko"
+
+timezone: Asia/Seoul
+
+# Exclude files from build
+exclude:
+  - .gjc/
+  - .idea/
+  - spec-temp.md
+  - DESIGN.md
+  - README.md
+
+# Defaults for all pages
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# GitHub Pages supported plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Sass
+sass:
+  style: compressed

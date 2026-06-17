@@ -1,0 +1,49 @@
+<!-- Top Navigation -->
+<nav class="top-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="{{ '/' | relative_url }}" class="nav-logo">SOL4R1S</a>
+    <div class="nav-links">
+      {% if page.lang == 'ko' %}
+        {% if page.is_home %}
+          <a href="#about">소개</a>
+        {% else %}
+          <a href="{{ '/' | relative_url }}">홈</a>
+        {% endif %}
+      {% else %}
+        {% if page.is_home %}
+          <a href="#about">About</a>
+        {% else %}
+          <a href="{{ '/en/' | relative_url }}">Home</a>
+        {% endif %}
+      {% endif %}
+      <div class="dropdown">
+        <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          {% if page.lang == 'ko' %}프로젝트{% else %}Projects{% endif %}
+        </button>
+        <div class="dropdown-menu" role="menu">
+          {% if page.lang == 'ko' %}
+            <a href="{{ '/projects/Photo-Selector/' | relative_url }}" role="menuitem"{% if page.is_photo_selector %} aria-current="page"{% endif %}>Photo Selector</a>
+          {% else %}
+            <a href="{{ '/en/projects/Photo-Selector/' | relative_url }}" role="menuitem"{% if page.is_photo_selector %} aria-current="page"{% endif %}>Photo Selector</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="lang-switch">
+        {% if page.lang == 'ko' %}
+          <a href="{{ page.url }}" class="active" aria-current="page">KO</a>
+          <span>/</span>
+          <a href="{{ page.lang_en_url | default: '/en/' | relative_url }}">EN</a>
+        {% else %}
+          <a href="{{ page.lang_ko_url | default: '/' | relative_url }}">KO</a>
+          <span>/</span>
+          <a href="{{ page.url }}" class="active" aria-current="page">EN</a>
+        {% endif %}
+      </div>
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
