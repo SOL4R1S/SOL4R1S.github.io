@@ -8,6 +8,7 @@
       <a href="{{ '/' | relative_url }}">홈</a>
     {% endif %}
     <a href="{{ '/projects/Photo-Selector/' | relative_url }}">Photo Selector</a>
+    <a href="{{ '/resume/' | relative_url }}">이력서</a>
     <a href="{{ page.lang_en_url | default: '/en/' | relative_url }}">English</a>
   {% else %}
     {% if page.is_home %}
@@ -17,6 +18,7 @@
       <a href="{{ '/en/' | relative_url }}">Home</a>
     {% endif %}
     <a href="{{ '/en/projects/Photo-Selector/' | relative_url }}">Photo Selector</a>
+    <a href="{{ '/en/resume/' | relative_url }}">Resume</a>
     <a href="{{ page.lang_ko_url | default: '/' | relative_url }}">Korean</a>
   {% endif %}
 </div>

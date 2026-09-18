@@ -28,6 +28,11 @@
           {% endif %}
         </div>
       </div>
+      {% if page.lang == 'ko' %}
+        <a href="{{ '/resume/' | relative_url }}"{% if page.is_resume %} aria-current="page"{% endif %}>이력서</a>
+      {% else %}
+        <a href="{{ '/en/resume/' | relative_url }}"{% if page.is_resume %} aria-current="page"{% endif %}>Resume</a>
+      {% endif %}
       <div class="lang-switch">
         {% if page.lang == 'ko' %}
           <a href="{{ page.url }}" class="active" aria-current="page">KO</a>

@@ -1,0 +1,203 @@
+---
+layout: default
+lang: en
+is_resume: true
+title: "Resume — SOL4R1S"
+description: "SOL4R1S Resume — Backend developer who solves external API integration and concurrency through design"
+hreflang_ko: "/resume/"
+canonical: "/en/resume/"
+lang_ko_url: "/resume/"
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow mb-md">Resume</p>
+    <h1 class="display-xl">Resume</h1>
+    <p class="hero-tagline">A backend developer who solves external API integration<br>and concurrency control through design.</p>
+    <div class="mt-xl flex gap-md" style="flex-wrap: wrap;">
+      <a href="mailto:mingh662@gmail.com" class="btn btn-primary">mingh662@gmail.com</a>
+      <a href="https://github.com/SOL4R1S" class="btn">GitHub — SOL4R1S</a>
+    </div>
+  </div>
+</section>
+
+<!-- Intro Section -->
+<section class="section" id="intro">
+  <div class="container">
+    <p class="eyebrow mb-md">About</p>
+    <h2 class="headline mb-xl">Introduction</h2>
+    <div class="resume-card">
+      <ul class="resume-list">
+        <li>Designed and built the external API integration layer and data collection pipeline for a mock stock-trading service connected to real brokerage and exchange APIs.</li>
+        <li>Resolved race conditions in consistency-critical logic — such as circuit-breaker order blocking — through transaction and lock-ordering design.</li>
+        <li>Document every PR with the rationale, verification commands, and test numbers, keeping docs and code in sync.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack Section -->
+<section class="section color-block color-block-mint">
+  <div class="container">
+    <p class="eyebrow mb-md">Tech Stack</p>
+    <h2 class="headline mb-xl">Skills</h2>
+    <div class="project-grid">
+      <div class="feature-card">
+        <h3 class="headline" style="font-size: 20px; margin-bottom: 8px;">Languages</h3>
+        <p style="margin-bottom: 12px;">Java, Kotlin, Dart, TypeScript</p>
+        <ul class="resume-list">
+          <li>Designed and implemented Spring Boot backend APIs in Java/Kotlin</li>
+          <li>Migrated 63 Java files to Kotlin, domain by domain</li>
+          <li>Built a full native Android app in Dart/Flutter</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3 class="headline" style="font-size: 20px; margin-bottom: 8px;">Framework / Library</h3>
+        <p style="margin-bottom: 12px;">Spring Boot, Spring Data JPA, Next.js(React), Flutter</p>
+        <ul class="resume-list">
+          <li>REST APIs, schedulers, and transaction/lock design with Spring Boot + JPA</li>
+          <li>Port-Adapter integration layer for three external API providers</li>
+          <li>Select Next.js frontend features (financial charts, mobile UX)</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3 class="headline" style="font-size: 20px; margin-bottom: 8px;">Database</h3>
+        <p style="margin-bottom: 12px;">MySQL, PostgreSQL</p>
+        <ul class="resume-list">
+          <li>Solved multi-JOIN row multiplication in MySQL aggregates with COUNT(DISTINCT)</li>
+          <li>Enforced invariants with PostgreSQL ON CONFLICT upserts, partial unique indexes, and CHECK constraints</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3 class="headline" style="font-size: 20px; margin-bottom: 8px;">ETC</h3>
+        <p style="margin-bottom: 12px;">Git/GitHub, k6, Playwright, Vercel</p>
+        <ul class="resume-list">
+          <li>PR-based collaboration: rationale and verification results attached to every PR body</li>
+          <li>Validated experimental branches with k6 load tests and Playwright E2E scenarios</li>
+          <li>Vercel frontend deployment and build fixes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="section" id="experience">
+  <div class="container">
+    <p class="eyebrow mb-md">Experience</p>
+    <h2 class="headline mb-xl">Projects</h2>
+
+    <div class="resume-card">
+      <span class="badge mb-md">Team Project</span>
+      <h3>InvestUp — Mock stock trading on real market data</h3>
+      <p class="resume-sub">A mock trading service (web + native Flutter app) that reproduces everything from real-time quotes to limit-order execution using live data from Toss Securities, Korea Investment &amp; Securities, and KRX.</p>
+      <p class="resume-meta">Aug–Sep 2026 (~3 weeks) · Backend — external API integration, collection pipeline, market-intervention system, auth/query APIs, Flutter app<br>Java · Spring Boot · Spring Data JPA · PostgreSQL · Dart/Flutter · TypeScript/Next.js</p>
+      <h4>What I built</h4>
+      <ul class="resume-list">
+        <li>Designed the external API layer as Port-Adapter so services never depend on provider DTOs (PR #13, #19)</li>
+        <li>Built a Spring-singleton global RateLimiter with per-group TPS pacing to respect Toss API quotas, plus single-flight token refresh on concurrent 401s (PR #95)</li>
+        <li>Separated external I/O (collection) from DB writes (short transactions) so network latency never holds connections or locks</li>
+        <li>Hardened the KRX KIND disclosure ingestion boundary: path whitelist, response size cap, no redirect following, XXE-safe parsing (PR #174)</li>
+        <li>Placed circuit-breaker checks right after the account FOR UPDATE lock inside the trading transaction, closing the race where halts declared during lock waits were missed (PR #191)</li>
+        <li>Made clientOrderId retries idempotent by restoring the stored market_event instead of re-judging (PR #192)</li>
+        <li>Built schedulers: 5s quotes, 3s order book, 15s market-intervention polling, hourly FX, weekly master refresh for ~8,500 tickers across 7 markets (PR #59, #69, #74, #179)</li>
+        <li>Implemented JWT stateless auth, member lifecycle APIs, and cursor pagination for ticker search and trading-value ranking (PR #118, #28, #39)</li>
+        <li>Ported the entire web feature set to a native Flutter app with zero API contract changes; shipped an Android APK (PR #215)</li>
+      </ul>
+      <h4>Results</h4>
+      <ul class="resume-list">
+        <li>All 19 PRs merged in 3 weeks; backend regression of 171 suites / 1,556 tests with zero failures (as of PR #192)</li>
+        <li>Reproduced real market behavior: new orders blocked on circuit breaker → pending limit orders held → auto-resume after release</li>
+        <li>Stayed within Toss (5 groups) and KIS (18 TPS) call quotas under scheduler/user contention</li>
+        <li>103 Flutter tests passing, flutter analyze clean — a complete mobile deliverable</li>
+      </ul>
+      <p class="resume-links"><a href="https://github.com/prgrms-be-devcourse/NBE10-12-final-BAEDANG">GitHub repository</a> · Key PRs #95, #174, #191, #192, #215</p>
+    </div>
+
+    <div class="resume-card">
+      <span class="badge mb-md">Team Project</span>
+      <h3>WhatToEat — Mood-based restaurant recommendation</h3>
+      <p class="resume-sub">A service that recommends restaurants by combining Kakao place search results with mood rules and user votes.</p>
+      <p class="resume-meta">Jul–Aug 2026 (~4 weeks) · Backend — domain Kotlin migration, recommendation algorithm, list &amp; popular-list APIs<br>Kotlin · Java · Spring Boot · Spring Data JPA · MySQL · TypeScript/Next.js</p>
+      <h4>What I built</h4>
+      <ul class="resume-list">
+        <li>Migrated 63 files across security, auth, and comment domains to Kotlin — tests first as a safety net, then production code (PR #6, #15, #23)</li>
+        <li>Split a getter-serialization bug found during migration into its own issue and PR (PR #18)</li>
+        <li>Designed the mood recommendation algorithm: refine candidates, sum rule scores and user votes, keep only scores above zero (PR #42)</li>
+        <li>Used scores only for candidate inclusion — final pick is a uniform shuffle — so recommendations stay varied while vote data is sparse</li>
+        <li>Separated a CategoryMapper that classifies Kakao's irregular category strings via token rules, with fallback to the full refined candidate set</li>
+        <li>Fixed multi-JOIN row multiplication in popular-list aggregation with COUNT(DISTINCT); deterministic ranking via saves → created-at → ID ordering (PR #27)</li>
+        <li>Prevented FK violations on list deletion via child-save cleanup and owner verification (PR #27)</li>
+      </ul>
+      <h4>Results</h4>
+      <ul class="resume-list">
+        <li>9 of 10 PRs merged; all tests passing after migrating 63 files across 3 domains from Java to Kotlin</li>
+        <li>Completed the new mood-recommendation flow, removed legacy code, and shipped a popular-list API backed by real save counts</li>
+        <li>Turned CHANGES_REQUESTED reviews into APPROVED through revision and re-verification; received positive feedback on algorithm documentation and verification scope</li>
+      </ul>
+      <p class="resume-links"><a href="https://github.com/prgrms-be-devcourse/NBE10-12-3-TBD">GitHub repository</a> · Key PRs #27, #42</p>
+    </div>
+
+    <div class="resume-card">
+      <span class="badge mb-md">Personal Project</span>
+      <h3>VBInvest — Local-first investment research dashboard</h3>
+      <p class="resume-sub">A full-stack dashboard that collects prices, technical indicators, news, and SEC/OpenDART filings into a local DB and generates AI reports.</p>
+      <p class="resume-meta">Jun–Aug 2026 (~2.5 months, 79 commits) · Solo — backend, frontend, CI, deployment<br>Python · Next.js · TypeScript · SQLite/PostgreSQL · Docker · Playwright</p>
+      <h4>What I built</h4>
+      <ul class="resume-list">
+        <li>Collection pipeline for prices, RSI, moving averages, news, and SEC/OpenDART filings into a local DB, plus AI report generation</li>
+        <li>BYOK (Bring Your Own Key) design — API keys stay on the user's machine; dual SQLite/PostgreSQL support</li>
+        <li>PR-based workflow with mypy/ruff CI gates and 8 Playwright e2e specs for quality control</li>
+        <li>Code-quality work: cleared 134 mypy errors, removed 18 type:ignore comments, split a 949-line component</li>
+      </ul>
+      <h4>Results</h4>
+      <ul class="resume-list">
+        <li>79 commits and PRs #5–#37 over 2.5 months of sustained development; reproducible local deployment via Dockerfile, compose, and Makefile</li>
+        <li>A tool I actually use — real reports generated for tickers like 005930.KS, MU, and SNDK</li>
+      </ul>
+      <p class="resume-links"><a href="https://github.com/SOL4R1S/VBInvest">GitHub repository</a></p>
+    </div>
+
+    <div class="resume-card">
+      <span class="badge mb-md">Personal Project</span>
+      <h3>PhotoSelector — Local AI photo curation desktop app</h3>
+      <p class="resume-sub">A macOS/Windows desktop app that analyzes photo batches locally to recommend keepers and group duplicates.</p>
+      <p class="resume-meta">Apr–Aug 2026 · Solo — everything<br>Flutter/Dart · Rust (ONNX Runtime, flutter_rust_bridge) · Swift (Vision) · Python</p>
+      <ul class="resume-list">
+        <li>Incrementally migrated per-platform AI backends to a single Rust+ONNX core, verifying preprocessing parity via cosine similarity</li>
+        <li>Designed a multi-language architecture connecting DINOv2 embeddings, face/pose analysis, and RAW(LibRaw)/HEIF pipelines across an FFI boundary</li>
+        <li>Mac App Store launch prep: privacy labels, screenshot plan, submission packet, manual QA checklist; tagged 0.8.0-alpha</li>
+      </ul>
+      <p class="resume-links"><a href="https://github.com/SOL4R1S/PhotoSelector">GitHub repository</a> · <a href="{{ '/en/projects/Photo-Selector/' | relative_url }}">Project page</a></p>
+    </div>
+
+    <div class="resume-card">
+      <span class="badge mb-md">Personal Project</span>
+      <h3>GimbalToStarTracker — Camera-gimbal equatorial-mount firmware</h3>
+      <p class="resume-sub">ESP32 firmware that turns a DJI RS/Zhiyun gimbal into a sidereal-tracking mount via CAN bus control.</p>
+      <p class="resume-meta">Aug 2026 (3-day sprint, 40 commits) · Solo<br>C++ (ESP32/PlatformIO, TWAI CAN, NimBLE) · Python · HTML</p>
+      <ul class="resume-list">
+        <li>Reproduced DJI R SDK frames byte-exact (CRC16/CRC32) with golden-vector tests; analyzed the +19.6ppm tracking-rate error</li>
+        <li>Host simulator enables regression testing without hardware; handled embedded bug classes like rollover-safe deadlines and shutter-ownership serialization</li>
+        <li>Bilingual (KO/EN) docs for BOM, pinout, and wiring</li>
+      </ul>
+      <p class="resume-links"><a href="https://github.com/SOL4R1S/GimbalToStarTracker">GitHub repository</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section class="section color-block color-block-cream">
+  <div class="container">
+    <p class="eyebrow mb-md">Education</p>
+    <h2 class="headline mb-xl">Training</h2>
+    <div class="resume-card">
+      <h3>Programmers Backend Dev Course (run by Grepp)</h3>
+      <ul class="resume-list">
+        <li>Backend development with Java, Kotlin, Spring Boot, and MySQL</li>
+        <li>Two team projects — WhatToEat and InvestUp</li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,203 @@
+---
+layout: default
+lang: ko
+is_resume: true
+title: "이력서 — SOL4R1S"
+description: "SOL4R1S 이력서 — 외부 API 연동과 동시성 제어를 설계로 풀어내는 백엔드 개발자"
+hreflang_en: "/en/resume/"
+canonical: "/resume/"
+lang_en_url: "/en/resume/"
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow mb-md">Resume</p>
+    <h1 class="display-xl">이력서</h1>
+    <p class="hero-tagline">외부 API 연동과 동시성 제어를 설계로 풀어내는 백엔드 개발자입니다.</p>
+    <div class="mt-xl flex gap-md" style="flex-wrap: wrap;">
+      <a href="mailto:mingh662@gmail.com" class="btn btn-primary">mingh662@gmail.com</a>
+      <a href="https://github.com/SOL4R1S" class="btn">GitHub — SOL4R1S</a>
+    </div>
+  </div>
+</section>
+
+<!-- Intro Section -->
+<section class="section" id="intro">
+  <div class="container">
+    <p class="eyebrow mb-md">About</p>
+    <h2 class="headline mb-xl">자기소개</h2>
+    <div class="resume-card">
+      <ul class="resume-list">
+        <li>실제 증권사·거래소 API를 연동한 모의주식투자 서비스에서 외부 API 연동 계층과 데이터 수집 파이프라인을 설계·구현했습니다.</li>
+        <li>서킷브레이커 주문 차단처럼 정합성이 중요한 로직을 트랜잭션과 락 순서로 설계해 경쟁 조건을 해결한 경험이 있습니다.</li>
+        <li>PR 본문에 변경 이유와 검증 명령어·테스트 수치를 함께 기록하며, 문서와 코드를 동기화하는 협업 방식을 지향합니다.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack Section -->
+<section class="section color-block color-block-mint">
+  <div class="container">
+    <p class="eyebrow mb-md">Tech Stack</p>
+    <h2 class="headline mb-xl">기술 스택</h2>
+    <div class="project-grid">
+      <div class="feature-card">
+        <h3 class="headline" style="font-size: 20px; margin-bottom: 8px;">Languages</h3>
+        <p style="margin-bottom: 12px;">Java, Kotlin, Dart, TypeScript</p>
+        <ul class="resume-list">
+          <li>Java/Kotlin 기반 Spring Boot 백엔드 API 설계·구현</li>
+          <li>Java 63개 파일을 Kotlin으로 도메인 단위 마이그레이션</li>
+          <li>Dart/Flutter로 네이티브 Android 앱 전체 구현</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3 class="headline" style="font-size: 20px; margin-bottom: 8px;">Framework / Library</h3>
+        <p style="margin-bottom: 12px;">Spring Boot, Spring Data JPA, Next.js(React), Flutter</p>
+        <ul class="resume-list">
+          <li>Spring Boot + JPA 기반 REST API, 스케줄러, 트랜잭션·락 설계</li>
+          <li>Port-Adapter 구조로 외부 API 공급자 3곳 연동 계층 설계</li>
+          <li>Next.js 프론트 일부 기능(재무제표 그래프, 모바일 UX) 구현</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3 class="headline" style="font-size: 20px; margin-bottom: 8px;">Database</h3>
+        <p style="margin-bottom: 12px;">MySQL, PostgreSQL</p>
+        <ul class="resume-list">
+          <li>MySQL 집계 쿼리 설계: COUNT(DISTINCT)로 다중 JOIN 행 곱셈 문제 해결</li>
+          <li>PostgreSQL ON CONFLICT upsert, partial unique index, CHECK 제약으로 불변식 강제</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3 class="headline" style="font-size: 20px; margin-bottom: 8px;">ETC</h3>
+        <p style="margin-bottom: 12px;">Git/GitHub, k6, Playwright, Vercel</p>
+        <ul class="resume-list">
+          <li>PR 기반 협업: 변경 사유와 검증 결과를 본문에 첨부하는 리뷰 문화</li>
+          <li>k6 부하 테스트·Playwright E2E 시나리오로 개인 실험 브랜치 검증</li>
+          <li>Vercel 프론트 배포 및 빌드 이슈 수리</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="section" id="experience">
+  <div class="container">
+    <p class="eyebrow mb-md">Experience</p>
+    <h2 class="headline mb-xl">프로젝트 경험</h2>
+
+    <div class="resume-card">
+      <span class="badge mb-md">Team Project</span>
+      <h3>InvestUp — 실제 증권 데이터 기반 모의주식투자 서비스</h3>
+      <p class="resume-sub">토스증권·한국투자증권·KRX 실제 데이터를 연동해 현재가 조회부터 지정가 체결까지 재현한 모의투자 서비스 (웹 + Flutter 네이티브 앱)</p>
+      <p class="resume-meta">2026.08 ~ 2026.09 (약 3주) · 백엔드 — 외부 API 연동, 수집 파이프라인, 시장조치 시스템, 인증·조회 API, Flutter 앱<br>Java · Spring Boot · Spring Data JPA · PostgreSQL · Dart/Flutter · TypeScript/Next.js</p>
+      <h4>담당 구현 기능 및 수행 내용</h4>
+      <ul class="resume-list">
+        <li>외부 API 연동 계층을 Port-Adapter 구조로 설계해 Service가 공급자 DTO에 의존하지 않도록 격리 (PR #13, #19)</li>
+        <li>Toss API 호출 한도 준수를 위해 Spring 싱글톤 전역 RateLimiter와 그룹별 TPS pacing, 401 동시 수신 시 single-flight 토큰 갱신 구현 (PR #95)</li>
+        <li>외부 I/O(수집)와 DB 적재(짧은 트랜잭션)를 서비스 단위로 분리해 네트워크 지연 중 커넥션·락 점유 방지</li>
+        <li>KRX KIND 공시 수집에 경로 화이트리스트·응답 크기 상한·redirect 미추적·XXE 방어를 적용한 방어적 수집 경계 구현 (PR #174)</li>
+        <li>서킷브레이커 차단 판정을 거래 트랜잭션 내 account FOR UPDATE 잠금 직후에 배치해 락 대기 중 시작된 시장조치를 놓치는 경쟁 조건 해결 (PR #191)</li>
+        <li>clientOrderId 재요청 시 재판정이 아닌 저장된 market_event 복원으로 멱등 재생 구현 (PR #192)</li>
+        <li>5초 현재가, 3초 호가, 15초 시장조치 폴링, 매시 환율, 7개 마켓 약 8,500종목 주간 갱신 스케줄러 구축 (PR #59, #69, #74, #179)</li>
+        <li>JWT Stateless 인증과 회원 생명주기 API, 종목 검색·거래대금 랭킹 커서 페이지네이션 구현 (PR #118, #28, #39)</li>
+        <li>웹 기능 전체를 API 계약 변경 없이 Flutter 네이티브 앱으로 포팅하고 Android APK 릴리즈 (PR #215)</li>
+      </ul>
+      <h4>성과 및 기여</h4>
+      <ul class="resume-list">
+        <li>3주간 작성한 19개 PR 전부 머지, 백엔드 회귀 171 suites / 1,556 tests 실패 0 기록 (PR #192 기준)</li>
+        <li>서킷브레이커 발동 시 신규 주문 차단 → 기존 지정가 체결 보류 → 해제 후 자동 재개까지 실제 시장 동작 재현</li>
+        <li>스케줄러와 사용자 요청이 경합하는 환경에서 Toss 5개 그룹·KIS 18 TPS 호출 한도 준수</li>
+        <li>Flutter 테스트 103개 통과, flutter analyze 0 issues로 모바일 산출물 완성</li>
+      </ul>
+      <p class="resume-links"><a href="https://github.com/prgrms-be-devcourse/NBE10-12-final-BAEDANG">GitHub 저장소</a> · 대표 PR #95, #174, #191, #192, #215</p>
+    </div>
+
+    <div class="resume-card">
+      <span class="badge mb-md">Team Project</span>
+      <h3>WhatToEat — 분위기 기반 식당 추천 서비스</h3>
+      <p class="resume-sub">카카오 장소 검색 결과에 분위기 규칙과 사용자 투표를 결합해 식당을 추천하는 서비스</p>
+      <p class="resume-meta">2026.07 ~ 2026.08 (약 4주) · 백엔드 — 도메인 Kotlin 마이그레이션, 추천 알고리즘, 리스트·인기 리스트 API<br>Kotlin · Java · Spring Boot · Spring Data JPA · MySQL · TypeScript/Next.js</p>
+      <h4>담당 구현 기능 및 수행 내용</h4>
+      <ul class="resume-list">
+        <li>security·auth·comment 3개 도메인 63개 파일을 테스트 코드 먼저 Kotlin으로 전환해 안전망을 만든 뒤 본 코드 마이그레이션 (PR #6, #15, #23)</li>
+        <li>전환 과정에서 발견한 getter 직렬화 버그를 별도 이슈·PR로 분리해 수정 (PR #18)</li>
+        <li>분위기 추천 알고리즘 설계: 후보 정제 후 규칙 점수와 사용자 투표 집계를 합산해 0점 초과만 남기는 필터 방식 적용 (PR #42)</li>
+        <li>점수를 랭킹이 아닌 후보 포함 판정에만 사용하고 최종 선택은 균등 셔플로 처리해, 투표 데이터가 희소한 초기에도 매번 다른 추천 결과 보장</li>
+        <li>카카오 비정형 카테고리 문자열을 토큰 규칙으로 분류하는 CategoryMapper 분리, 필터 결과가 비면 정제된 전체 후보로 폴백</li>
+        <li>인기 리스트 집계의 다중 JOIN 행 곱셈 문제를 COUNT(DISTINCT)로 해결, 저장 수 → 생성 시각 → ID 3단계 정렬로 결정적 순위 보장 (PR #27)</li>
+        <li>원본 리스트 삭제 시 자식 저장 데이터 선삭제와 소유자 검증으로 FK 참조 오류 방지 (PR #27)</li>
+      </ul>
+      <h4>성과 및 기여</h4>
+      <ul class="resume-list">
+        <li>작성한 10개 PR 중 9개 머지, 3개 도메인 63개 파일의 Java → Kotlin 전환 후 전체 테스트 통과</li>
+        <li>신규 분위기 추천 플로우 완성 및 레거시 추천 코드 제거, 실제 저장 수 기반 인기 리스트 API 제공</li>
+        <li>리뷰에서 CHANGES_REQUESTED를 반영·재검증해 APPROVED까지 이끌어냈고, 알고리즘 문서화와 검증 범위에 대해 긍정적인 피드백 수신</li>
+      </ul>
+      <p class="resume-links"><a href="https://github.com/prgrms-be-devcourse/NBE10-12-3-TBD">GitHub 저장소</a> · 대표 PR #27, #42</p>
+    </div>
+
+    <div class="resume-card">
+      <span class="badge mb-md">Personal Project</span>
+      <h3>VBInvest — 로컬 우선 개인 투자 리서치 대시보드</h3>
+      <p class="resume-sub">주가·기술지표·뉴스·SEC/OpenDART 공시를 로컬 DB에 수집하고 AI 리포트를 생성하는 풀스택 대시보드</p>
+      <p class="resume-meta">2026.06 ~ 2026.08 (약 2.5개월, 79커밋) · 개인 — 백엔드, 프론트엔드, CI, 배포<br>Python · Next.js · TypeScript · SQLite/PostgreSQL · Docker · Playwright</p>
+      <h4>담당 구현 기능 및 수행 내용</h4>
+      <ul class="resume-list">
+        <li>종목 가격·RSI·이동평균·뉴스·SEC/OpenDART 공시를 로컬 DB에 수집하는 파이프라인과 AI 리포트 생성 기능 구현</li>
+        <li>BYOK(Bring Your Own Key) 구조로 API 키를 사용자 로컬에만 보관하고 SQLite/PostgreSQL 이중 지원</li>
+        <li>PR 기반 개발 워크플로우 적용, mypy·ruff CI 게이트와 Playwright e2e 8개 스펙으로 품질 관리</li>
+        <li>mypy 오류 134건 정리, type:ignore 18건 제거, 949줄 컴포넌트 분할 리팩터링 등 코드 품질 개선 작업 수행</li>
+      </ul>
+      <h4>성과 및 기여</h4>
+      <ul class="resume-list">
+        <li>2.5개월간 79커밋·PR #5~#37의 지속적 개발 이력, Dockerfile+compose+Makefile로 재현 가능한 로컬 배포 환경 구축</li>
+        <li>005930.KS·MU·SNDK 등 실제 종목 리포트를 산출해 실사용하는 도구로 완성</li>
+      </ul>
+      <p class="resume-links"><a href="https://github.com/SOL4R1S/VBInvest">GitHub 저장소</a></p>
+    </div>
+
+    <div class="resume-card">
+      <span class="badge mb-md">Personal Project</span>
+      <h3>PhotoSelector — 로컬 AI 사진 큐레이션 데스크톱 앱</h3>
+      <p class="resume-sub">사진 배치를 로컬에서 분석해 keep 후보 추천·중복 그룹핑하는 macOS/Windows 데스크톱 앱</p>
+      <p class="resume-meta">2026.04 ~ 2026.08 · 개인 — 전체<br>Flutter/Dart · Rust(ONNX Runtime, flutter_rust_bridge) · Swift(Vision) · Python</p>
+      <ul class="resume-list">
+        <li>플랫폼별로 분리된 AI 백엔드를 Rust+ONNX 단일 코어로 증분 마이그레이션하고, 전처리 정합성을 코사인 유사도로 검증</li>
+        <li>DINOv2 임베딩·얼굴/포즈 분석·RAW(LibRaw)/HEIF 파이프라인을 FFI 경계로 연결한 멀티언어 구조 설계</li>
+        <li>Mac App Store 출시 준비: 개인정보 라벨·스크린샷 계획·제출 패킷·수동 QA 체크리스트 작성, 0.8.0-alpha 태그</li>
+      </ul>
+      <p class="resume-links"><a href="https://github.com/SOL4R1S/PhotoSelector">GitHub 저장소</a> · <a href="{{ '/projects/Photo-Selector/' | relative_url }}">프로젝트 페이지</a></p>
+    </div>
+
+    <div class="resume-card">
+      <span class="badge mb-md">Personal Project</span>
+      <h3>GimbalToStarTracker — 카메라 짐벌 적도의 마운트 전환 펌웨어</h3>
+      <p class="resume-sub">DJI RS/Zhiyun 짐벌을 CAN 버스 제어로 항성 추적 마운트로 전환하는 ESP32 펌웨어</p>
+      <p class="resume-meta">2026.08 (3일 집중, 40커밋) · 개인<br>C++(ESP32/PlatformIO, TWAI CAN, NimBLE) · Python · HTML</p>
+      <ul class="resume-list">
+        <li>DJI R SDK 프레임을 바이트 단위로 재현(CRC16/CRC32)하고 골든 벡터 테스트로 검증, 추적 레이트 오차 +19.6ppm 분석</li>
+        <li>호스트 시뮬레이터로 하드웨어 없이 회귀 테스트 가능한 구조 설계, rollover-safe deadline·셔터 소유권 직렬화 등 임베디드 버그 클래스 처리</li>
+        <li>BOM·핀아웃·결선 가이드를 한영 문서화</li>
+      </ul>
+      <p class="resume-links"><a href="https://github.com/SOL4R1S/GimbalToStarTracker">GitHub 저장소</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section class="section color-block color-block-cream">
+  <div class="container">
+    <p class="eyebrow mb-md">Education</p>
+    <h2 class="headline mb-xl">직무 관련 교육</h2>
+    <div class="resume-card">
+      <h3>프로그래머스 백엔드 데브코스 (운영: 그렙)</h3>
+      <ul class="resume-list">
+        <li>Java·Kotlin·Spring Boot·MySQL 기반 백엔드 개발 학습</li>
+        <li>팀 프로젝트 2회 수행 — WhatToEat, InvestUp</li>
+      </ul>
+    </div>
+  </div>
+</section>

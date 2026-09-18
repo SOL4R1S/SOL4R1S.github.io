@@ -501,6 +501,38 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--hairline-soft);
 }
 
+/* --- Resume page --- */
+.resume-card {
+  background: var(--surface-card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+.resume-card + .resume-card { margin-top: var(--space-lg); }
+.resume-card h3 {
+  font-size: 22px;
+  font-weight: 550;
+  letter-spacing: -0.22px;
+  margin-bottom: 4px;
+}
+.resume-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: var(--space-md) 0 8px;
+}
+.resume-sub { font-size: 15px; opacity: 0.75; margin-bottom: var(--space-md); }
+.resume-meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  opacity: 0.65;
+  margin-bottom: var(--space-md);
+}
+.resume-list { padding-left: 18px; }
+.resume-list li { font-size: 15px; font-weight: 330; margin-bottom: 6px; }
+.resume-list li::marker { opacity: 0.35; }
+.resume-links { margin-top: var(--space-md); font-size: 14px; }
+.resume-links a { color: var(--accent-blue); text-decoration: underline; }
+
 /* --- Sub Link Card --- */
 .sub-link-card {
   display: flex;
