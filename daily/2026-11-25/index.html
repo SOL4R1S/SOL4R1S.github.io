@@ -31,12 +31,16 @@
     dt { font-weight: 650; }
     dd { margin: 0 0 .75rem; }
     .video-link { font-variant-numeric: tabular-nums; }
-    .site-link { display: inline-block; margin: 0 0 1rem; }
+    .site-nav { display: flex; flex-wrap: wrap; gap: .35rem .75rem; margin: 0 0 1rem; font-size: .95rem; color: #494d45; }
   </style>
 </head>
 <body>
 <main>
-  <a class="site-link" href="/">SOL4R1S 홈</a>
+  <nav class="site-nav" aria-label="상위 이동">
+    <a href="/daily/">← AI·개발 데일리 목록</a>
+    <span aria-hidden="true">·</span>
+    <a href="/">SOL4R1S 홈</a>
+  </nav>
   <header class="cover">
     <div class="issue-label">AI·개발 데일리 · <time datetime="2026-11-25">2026-11-25</time></div>
     <h1>에이전트가 일하고 AI가 연구하는 시대, 신뢰성과 책임을 어디서 확인할까</h1>
