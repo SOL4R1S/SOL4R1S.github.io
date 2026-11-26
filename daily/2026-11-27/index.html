@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="모델 효율이 높아질수록 천문학적인 AI 인프라 투자가 과연 적정한가라는 역설적 질문이 시장을 흔들고 있어요. 동시에 미국의 우회 수출 차단과 중국 AI 모델 지연, SpaceX의 궤도 데이터센터 승인까지 연산 패권을 둘러싼 판도가 급변 중이에요. 오늘 에디션에서는 인프라 지정학부터 로보틱스·RAG 실전 해법까지 핵심 흐름을 짚어봐요.">
+  <link rel="canonical" href="https://sol4r1s.github.io/daily/2026-11-27/">
+  <title>AI·개발 데일리 · 2026-11-27 | SOL4R1S</title>
+  <style>
+    :root { color-scheme: light; scroll-padding-top: 1.25rem; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #181817; background: #f7f7f5; font: 1.0625rem/1.72 system-ui, sans-serif; }
+    a { color: #064f96; text-underline-offset: .15em; overflow-wrap: anywhere; }
+    a:focus-visible, summary:focus-visible { outline: 2px solid #064f96; outline-offset: 3px; }
+    main { width: min(100% - 2rem, 46rem); margin: auto; padding: 2rem 0 4rem; }
+    .cover { padding: clamp(1.25rem, 5vw, 2.75rem); border-radius: 1.25rem; background: #e7ecd9; }
+    .issue-label { font-size: .92rem; font-weight: 650; }
+    h1, h2, h3 { line-height: 1.28; overflow-wrap: anywhere; }
+    h1 { margin: .75rem 0; font-size: clamp(1.8rem, 5.8vw, 3.25rem); letter-spacing: -.035em; }
+    .picks { padding: 1.25rem; margin: 1.5rem 0 2rem; border: 1px solid #d7d9d1; border-radius: 1rem; }
+    .picks h2 { margin-top: 0; }
+    section { margin-top: 2rem; }
+    article { margin: .9rem 0; padding: clamp(1rem, 4vw, 1.6rem); border: 1px solid #dbded7; border-radius: 1rem; background: #fff; }
+    article h3 { margin: .5rem 0 .6rem; font-size: 1.25rem; }
+    article p, ul, ol { margin: .55rem 0; }
+    ul, ol { padding-inline-start: 1.35em; }
+    li + li { margin-top: .4rem; }
+    .provenance, .source-meta, .coverage { color: #494d45; font-size: .9rem; }
+    details { border-top: 1px solid #e1e3dd; margin-top: .9rem; padding-top: .7rem; }
+    summary { width: fit-content; min-height: 2rem; cursor: pointer; font-weight: 650; }
+    dt { font-weight: 650; }
+    dd { margin: 0 0 .75rem; }
+    .video-link { font-variant-numeric: tabular-nums; }
+    .site-nav { display: flex; flex-wrap: wrap; gap: .35rem .75rem; margin: 0 0 1rem; font-size: .95rem; color: #494d45; }
+  </style>
+</head>
+<body>
+<main>
+  <nav class="site-nav" aria-label="상위 이동">
+    <a href="/daily/">← AI·개발 데일리 목록</a>
+    <span aria-hidden="true">·</span>
+    <a href="/">SOL4R1S 홈</a>
+  </nav>
+  <header class="cover">
+    <div class="issue-label">AI·개발 데일리 · <time datetime="2026-11-27">2026-11-27</time></div>
+    <h1>효율 혁신이 부른 인프라 투자 역설과 대중국 칩 규제 봉쇄, 궤도 데이터센터까지 AI 연산 지형이 재편되고 있어요</h1>
+    <p>모델 효율이 높아질수록 천문학적인 AI 인프라 투자가 과연 적정한가라는 역설적 질문이 시장을 흔들고 있어요. 동시에 미국의 우회 수출 차단과 중국 AI 모델 지연, SpaceX의 궤도 데이터센터 승인까지 연산 패권을 둘러싼 판도가 급변 중이에요. 오늘 에디션에서는 인프라 지정학부터 로보틱스·RAG 실전 해법까지 핵심 흐름을 짚어봐요.</p>
+  </header>
+  <nav class="picks" aria-label="먼저 볼 소식">
+    <h2>먼저 볼 소식</h2>
+    <ol>
+      <li><a href="#story-1">앤트로픽 IPO &#x27;컴퓨팅 승수&#x27;, AI 인프라 투자 역설을 부르다</a></li>
+      <li><a href="#story-2">엔비디아, 동남아 4개국 AI 서버 출하 중단…중국 우회 차단</a></li>
+      <li><a href="#story-3">증류 차단과 칩 규제 이중고에 중국 AI 플래그십 출시 줄줄이 지연</a></li>
+    </ol>
+  </nav>
+  <section aria-labelledby="section-1">
+    <h2 id="section-1">오늘의 한 줄</h2>
+    <article id="story-1">
+      <p class="provenance">중요도 9/10 · 단일 매체 보도</p>
+      <h3>앤트로픽 IPO &#x27;컴퓨팅 승수&#x27;, AI 인프라 투자 역설을 부르다</h3>
+      <p>앤트로픽이 IPO 과정에서 강조한 &#x27;컴퓨팅 승수&#x27; 개념이 역설적으로 AI 인프라 투자자들의 불안을 키우고 있어요. 알고리즘과 엔지니어링 개선으로 더 적은 연산 자원으로도 같은 성능을 내게 되면서, 천문학적인 인프라 투자의 적정성에 의문이 제기되고 있어요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>컴퓨팅 승수가 4배면 기존 4분의 1 연산 자원으로 동일 성능의 모델을 학습할 수 있어요.</li>
+          <li>앤트로픽은 상장 전 투자자들에게 같은 컴퓨팅 자원으로 당초 예상의 4배 매출을 올릴 수 있다고 설명했어요.</li>
+          <li>비즈니스 인사이더는 이 효율성 논리가 최근 AI 관련주 매도 압력을 키운 요인 중 하나라고 분석했어요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>모델 연산 효율이 4배 높아질수록 GPU 인프라 과잉 투자 논란은 오히려 더 거세질 수 있어요.</dd>
+          <dt>지금 할 일</dt><dd>AI타임스 기사에서 컴퓨팅 승수의 정의와 알파센스 부사장이 전한 투자자 설명 내용을 확인해 보세요.</dd>
+          <dt>왜 지금</dt><dd>최근 AI 관련주 매도 압력의 배경으로 알고리즘 효율 향상이 지목되기 시작했기 때문이에요. 모델 기업의 수익성 개선 논리가 인프라 수요 둔화 우려로 번지는 시장 심리를 읽을 수 있어요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://www.aitimes.com/news/articleView.html?idxno=217803">AI타임스</a> <span class="source-meta">· 보도 · 11-27 07:00 KST</span></li>
+        </ul>
+      </details>
+    </article>
+  </section>
+  <section aria-labelledby="section-2">
+    <h2 id="section-2">사람들 반응</h2>
+    <article id="story-2">
+      <p class="provenance">중요도 9/10 · 복수 출처 대조</p>
+      <h3>엔비디아, 동남아 4개국 AI 서버 출하 중단…중국 우회 차단</h3>
+      <p>엔비디아가 델과 슈퍼마이크로 등 제조 파트너에 말레이시아·싱가포르·태국·인도네시아행 AI 서버 출하를 중단하라고 지시했어요. 미국 상무부가 11월 19일부터 중국의 첨단 AI 칩 원격 접근을 막는 새 수출 규제를 시행한 데 따른 후속 조치예요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>미국 진보연구소(IFP)는 해외 데이터센터가 올해 말 기준 중국 AI 컴퓨팅 자원의 약 24%를 공급할 것으로 추산했어요.</li>
+          <li>엔비디아는 중국 기업에 연산 자원을 임대하는 클라우드 업체의 GPU 공급도 제한하기 시작했어요.</li>
+          <li>제조 파트너들이 미국 수출 요건을 충족하는지 평가하는 동안 출하 중단 기간은 특정되지 않았어요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>미국 수출 규제가 물리적 칩 반입을 넘어 해외 데이터센터 원격 임대까지 봉쇄하는 단계로 넘어갔어요.</dd>
+          <dt>지금 할 일</dt><dd>TechCrunch AI와 AI타임스 보도에서 BIS 신규 규정과 동남아 4개국 조치 내역을 비교해 보세요.</dd>
+          <dt>왜 지금</dt><dd>직접 수입이 막힌 중국 기업들이 활용하던 해외 클라우드 우회로마저 공식 차단됐기 때문이에요. 동남아 데이터센터 산업과 글로벌 GPU 공급망에 당장 어떤 타격이 오는지 파악할 수 있어요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://www.aitimes.com/news/articleView.html?idxno=217837">AI타임스</a> <span class="source-meta">· 보도 · 11-27 05:55 KST</span></li>
+          <li><a href="https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/">TechCrunch AI</a> <span class="source-meta">· 보도 · 11-27 05:03 KST</span></li>
+        </ul>
+      </details>
+    </article>
+    <article id="story-3">
+      <p class="provenance">중요도 8/10 · 복수 출처 대조</p>
+      <h3>증류 차단과 칩 규제 이중고에 중국 AI 플래그십 출시 줄줄이 지연</h3>
+      <p>오픈AI와 앤트로픽의 모델 증류 차단 강화에 미국의 반도체 수출 규제까지 겹치면서 중국 AI 기업들의 로드맵에 차질이 생겼어요. Z.ai의 &#x27;GLM-5.5&#x27;는 내년으로 밀릴 전망이고, 문샷 AI도 차기 모델 개발 주기가 두 배로 늘어날 수 있어요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>Z.ai의 3조 매개변수 모델 &#x27;GLM-5.5&#x27;는 11월 출시 예정이었으나 2027년 1분기 이후로 밀릴 전망이에요.</li>
+          <li>Z.ai는 공백을 메우기 위해 지난 23일 7500억 매개변수 기반 &#x27;GLM-5.4&#x27;를 먼저 공개했어요.</li>
+          <li>문샷 AI는 해외 연산 자원 없이 개발 주기가 6개월에서 12개월로 늘어 &#x27;Kimi K4&#x27;가 2027년 중반으로 미뤄질 수 있어요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>연산 자원 확보와 모델 증류 경로가 동시에 막히자 중국 AI 기업들의 대형 모델 개발 주기가 2배로 길어지고 있어요.</dd>
+          <dt>지금 할 일</dt><dd>The Decoder와 AI타임스 기사에서 GLM-5.4 대체 전략과 문샷 AI 지연 일정을 확인해 보세요.</dd>
+          <dt>왜 지금</dt><dd>칩 부족뿐 아니라 프론티어 모델 데이터 차단(증류 방지)이 실제 출시 지연으로 확인된 첫 신호이기 때문이에요. 중국 AI 랩들이 구글과 메타 등 새로운 학습 소스로 눈을 돌리는 흐름도 짚어볼 수 있어요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://www.aitimes.com/news/articleView.html?idxno=217838">AI타임스</a> <span class="source-meta">· 보도 · 11-27 06:20 KST</span></li>
+          <li><a href="https://the-decoder.com/after-openai-and-anthropic-shut-the-door-on-their-data-a-chinese-ai-developer-is-turning-to-google-and-meta-instead/">The Decoder</a> <span class="source-meta">· 보도 · 11-27 00:45 KST</span></li>
+        </ul>
+      </details>
+    </article>
+  </section>
+  <section aria-labelledby="section-3">
+    <h2 id="section-3">새로 나왔어요</h2>
+    <article id="story-4">
+      <p class="provenance">중요도 8/10 · 복수 출처 대조</p>
+      <h3>FCC, SpaceX 궤도 AI 데이터센터 위성 &#x27;스타마인드&#x27; 100만 기 승인</h3>
+      <p>미국 연방통신위원회(FCC)가 일론 머스크의 SpaceX에 궤도 AI 데이터센터용 위성 &#x27;스타마인드(Starmind)&#x27; 최대 100만 기 배치를 승인했어요. 2027년 첫 발사를 목표로 2040년까지 전체 위성군을 가동해 지상 AI 연산 수요를 분담할 계획이에요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>FCC는 위성의 광통신 연결이 끊길 경우에 대비한 무선 모니터링·제어 링크도 함께 승인했어요.</li>
+          <li>보스턴컨설팅그룹(BCG)은 당분간 궤도 데이터센터 비용이 지상 데이터센터보다 훨씬 높을 것으로 추산했어요.</li>
+          <li>SpaceX는 2027년 첫 발사를 시작해 2040년 전체 100만 기 위성군 완성을 목표로 하고 있어요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>우주 AI 데이터센터가 규제 문턱을 처음 넘었지만, 경제성 확보까지는 아직 갈 길이 멀어요.</dd>
+          <dt>지금 할 일</dt><dd>The Decoder와 The Guardian 보도에서 FCC 승인 조건과 전문가 비용 진단을 살펴보세요.</dd>
+          <dt>왜 지금</dt><dd>구글과 블루오리진도 우주 데이터센터를 추진하는 가운데 미국 규제 당국이 궤도 컴퓨팅 프로젝트를 처음 공식 허가했기 때문이에요. 에너지 효율 기대와 현실적 비용 한계를 함께 따져볼 수 있어요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://www.theguardian.com/news/video/2026/nov/26/can-elon-musk-really-put-ai-datacentres-in-space-the-latest">The Guardian</a> <span class="source-meta">· 보도 · 11-27 03:34 KST</span></li>
+          <li><a href="https://the-decoder.com/fcc-clears-spacex-to-deploy-up-to-1-million-starmind-satellites-for-orbital-ai-data-centers-by-2040/">The Decoder</a> <span class="source-meta">· 보도 · 11-26 22:41 KST</span></li>
+          <li><a href="https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers">The Verge</a> <span class="source-meta">· 보도 · 11-26 02:44 KST</span></li>
+        </ul>
+      </details>
+    </article>
+    <article id="story-5">
+      <p class="provenance">중요도 8/10 · 공식 자료</p>
+      <h3>AWS Lambda, 내구적 실행 함수로 MicroVM 샌드박스 오케스트레이션 지원</h3>
+      <p>AWS가 Lambda 내구적 실행 함수(durable functions)에서 Lambda MicroVM을 제어하는 확장 기능의 개발자 프리뷰를 공개했어요. 체크포인팅과 자동 재시도를 갖춘 장기 워크플로 안에서 AI가 생성한 신뢰할 수 없는 코드를 안전하게 격리 실행할 수 있어요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>Lambda MicroVM은 VM 수준 격리와 빠른 시작·재개, 상태 보존 기능을 제공하는 서버리스 컴퓨팅 프리미티브예요.</li>
+          <li>내구적 실행 함수는 내장 체크포인팅과 자동 재시도를 통해 최대 1년까지 실행되는 AI 워크플로를 지원해요.</li>
+          <li>단일 태스크 실행뿐 아니라 여러 태스크가 파일과 메모리를 공유하는 MicroVM 세션 실행도 가능해요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>서버리스 환경에서도 파일·메모리를 공유하는 장기 MicroVM 세션으로 에이전트 코드 샌드박스를 구현할 수 있어요.</dd>
+          <dt>지금 할 일</dt><dd>AWS What&#x27;s New 공지에서 MicroVM 개별 실행과 세션 공유 방식의 차이를 확인해 보세요.</dd>
+          <dt>왜 지금</dt><dd>AI 코딩 에이전트가 만든 코드를 CI/CD나 소프트웨어 팩토리에서 안전하게 돌릴 격리 실행 환경 수요가 급증했기 때문이에요. 상태 보존 세션과 1년 단위 장기 실행 패턴을 어떻게 조합하는지 익힐 수 있어요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-microvm/">AWS What&#x27;s New</a> <span class="source-meta">· 공식 자료 · 11-26 05:00 KST</span></li>
+        </ul>
+      </details>
+    </article>
+  </section>
+  <section aria-labelledby="section-4">
+    <h2 id="section-4">한 입 지식</h2>
+    <article id="story-6">
+      <p class="provenance">중요도 7/10 · 단일 매체 보도</p>
+      <h3>사내 용어에 약한 기업용 RAG, 임베딩 파인튜닝으로 돌파한 델(Dell) 사례</h3>
+      <p>델(Dell)의 수석 엔지니어 레이첼 샬롬이 QCon AI 발표에서 사내 전문 용어 검색에 실패하던 에이전틱 RAG를 오픈소스 임베딩 모델 파인튜닝으로 해결한 과정을 공유했어요. 하드 네거티브 데이터 구성부터 H100 분산 학습과 LLM-as-a-judge 평가까지 전 과정을 다뤘어요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>혼동하기 쉬운 오답인 하드 네거티브(hard negatives)를 활용해 도메인 용어 변별력을 높이는 데이터셋을 구축했어요.</li>
+          <li>H100 GPU에서 분산 InfoNCE 손실 학습을 돌리고 하이퍼파라미터 튜닝을 자동화했어요.</li>
+          <li>프로덕션 단계의 검색 품질 검증에는 LLM-as-a-judge 평가 방식을 도입해 실무 정확도를 확인했어요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>사내 용어 검색 실패는 프롬프트 수정보다 하드 네거티브 기반의 임베딩 파인튜닝과 체계적 자동 평가로 풀어야 해요.</dd>
+          <dt>지금 할 일</dt><dd>InfoQ 발표 페이지에서 하드 네거티브 데이터 준비와 분산 InfoNCE 학습 구성을 참고해 보세요.</dd>
+          <dt>왜 지금</dt><dd>범용 임베딩 모델만으로는 기업 내부 도메인 용어 검색 정확도에 한계가 드러나는 팀이 많기 때문이에요. 데이터셋 설계부터 손실 함수 학습, 자동화된 프로덕션 평가 파이프라인 설계법을 배울 수 있어요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://www.infoq.com/presentations/fine-tune-enterprise-rag-embeddings/">InfoQ</a> <span class="source-meta">· 보도 · 11-26 20:00 KST</span></li>
+        </ul>
+      </details>
+    </article>
+  </section>
+  <section aria-labelledby="section-5">
+    <h2 id="section-5">신기한 AI</h2>
+    <article id="story-7">
+      <p class="provenance">중요도 8/10 · 공식 자료·보도 대조</p>
+      <h3>딥마인드 &#x27;제미나이 로보틱스 2.5&#x27; 공개…물리 안전성 벤치마크도 개방</h3>
+      <p>구글 딥마인드가 비정형 현실 환경에서 로봇의 손재주와 안전성, 학습 속도를 높인 VLA 모델 &#x27;제미나이 로보틱스 2.5&#x27;를 발표했어요. 이와 함께 허깅페이스에 에이전트 로봇의 물리적 안전성과 탈옥 공격을 시험하는 `google/asimov_agentic` 평가 세트를 공개했어요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>200개 이상 작업 평가에서 이전 버전 대비 성공률은 30~100%, 작업 완료율은 20~30% 향상됐어요.</li>
+          <li>집게로 음식 담기, 선물 상자 리본 묶기, 피펫으로 액체 옮기기 등 정교한 제어 시연을 선보였어요.</li>
+          <li>`google/asimov_agentic`에는 물리 안전성과 멀티턴 적대적 탈옥을 시험하는 ASIMOV-Jailbreak가 포함됐어요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>로보틱스 AI는 집게 조리·리본 묶기 같은 미세 제어뿐 아니라 물리 안전성과 탈옥 방어 검증까지 표준화되는 흐름이에요.</dd>
+          <dt>지금 할 일</dt><dd>Hugging Face의 `google/asimov_agentic` 저장소에서 `asimov_physical_safety_eval.py`와 벤치마크 조건을 확인해 보세요.</dd>
+          <dt>왜 지금</dt><dd>로봇 파운데이션 모델의 정교한 작업 성능 향상과 물리 안전성 검증 도구가 동시에 공개됐기 때문이에요. VLA 모델의 작업 성공률 개선 폭과 멀티턴 탈옥 평가 기준을 함께 살펴볼 수 있어요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://www.infoq.com/news/2026/11/deepmind-gemini-robotics-2-5/">InfoQ</a> <span class="source-meta">· 보도 · 11-26 02:00 KST</span></li>
+          <li><a href="https://huggingface.co/datasets/google/asimov_agentic">Hugging Face</a> <span class="source-meta">· 공식 자료 · 발행 시각 미확인</span></li>
+        </ul>
+      </details>
+    </article>
+  </section>
+  <section aria-labelledby="section-6">
+    <h2 id="section-6">이거 써보세요</h2>
+    <article id="story-8">
+      <p class="provenance">중요도 7/10 · 공식 자료</p>
+      <h3>허깅페이스 × AMD, `llama.cpp` 로컬 추론 성능 비교 대시보드 공개</h3>
+      <p>허깅페이스와 GGML 팀이 AMD 라이젠 및 라데온 환경에서 `llama.cpp` 추론 성능을 추적할 수 있는 공개 벤치마크 대시보드를 선보였어요. 사용자는 하드웨어, 모델, 양자화 방식, 빌드 버전을 골라 프롬프트 처리(PP512)와 텍스트 생성 속도를 직접 비교할 수 있어요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>현재 대시보드에서 선택 가능한 하드웨어는 Radeon 8060S(gfx1151)와 Radeon AI Pro R9700S(gfx1201)예요.</li>
+          <li>모든 테스트는 컨텍스트 깊이 0(n_depth=0)에서 시작하며 PP512는 입력 토큰 512개 처리 성능을 측정해요.</li>
+          <li>벤치마크 워크플로와 원시 결과 데이터가 모두 공개되어 있어 측정 방식을 직접 검증할 수 있어요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>Radeon 8060S와 R9700S 환경의 `llama.cpp` 빌드별·양자화별 추론 속도 변화를 공개 데이터로 바로 검증할 수 있어요.</dd>
+          <dt>지금 할 일</dt><dd>Hugging Face의 `llamacpp-amd-bench` 블로그와 대시보드 사이드바에서 하드웨어와 양자화 옵션을 선택해 비교해 보세요.</dd>
+          <dt>왜 지금</dt><dd>커널과 모델, 빌드 업데이트마다 달라지는 AMD 로컬 GPU·APU 추론 성능을 정량적으로 비교하기가 까다로웠기 때문이에요. 로컬 LLM 구동 환경에서 양자화별 처리량 변화를 손쉽게 확인할 수 있어요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://huggingface.co/blog/ggml-org/llamacpp-amd-bench">Hugging Face</a> <span class="source-meta">· 공식 자료 · 11-26 20:37 KST</span></li>
+        </ul>
+      </details>
+    </article>
+  </section>
+  <section class="coverage" aria-labelledby="coverage">
+    <h2 id="coverage">수집 범위</h2>
+    <p>수집 08:00 KST · 최근 36시간 · 기사 후보 38건 · 선정 8건</p>
+    <p>영상 후보 19편 · 영상 확인 0편</p>
+  </section>
+</main>
+</body>
+</html>
