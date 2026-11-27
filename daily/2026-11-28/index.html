@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI가 내놓은 수학 결과를 누가 검증할지, 에이전트가 만든 코드를 어떻게 안전하게 다룰지가 함께 떠오르고 있어요. 오늘은 성능 수치와 자동화 발표를 볼 때 검증 방식과 실제 운영 조건도 살펴봐요.">
+  <link rel="canonical" href="https://sol4r1s.github.io/daily/2026-11-28/">
+  <title>AI·개발 데일리 · 2026-11-28 | SOL4R1S</title>
+  <style>
+    :root { color-scheme: light; scroll-padding-top: 1.25rem; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #181817; background: #f7f7f5; font: 1.0625rem/1.72 system-ui, sans-serif; }
+    a { color: #064f96; text-underline-offset: .15em; overflow-wrap: anywhere; }
+    a:focus-visible, summary:focus-visible { outline: 2px solid #064f96; outline-offset: 3px; }
+    main { width: min(100% - 2rem, 46rem); margin: auto; padding: 2rem 0 4rem; }
+    .cover { padding: clamp(1.25rem, 5vw, 2.75rem); border-radius: 1.25rem; background: #e7ecd9; }
+    .issue-label { font-size: .92rem; font-weight: 650; }
+    h1, h2, h3 { line-height: 1.28; overflow-wrap: anywhere; }
+    h1 { margin: .75rem 0; font-size: clamp(1.8rem, 5.8vw, 3.25rem); letter-spacing: -.035em; }
+    .picks { padding: 1.25rem; margin: 1.5rem 0 2rem; border: 1px solid #d7d9d1; border-radius: 1rem; }
+    .picks h2 { margin-top: 0; }
+    section { margin-top: 2rem; }
+    article { margin: .9rem 0; padding: clamp(1rem, 4vw, 1.6rem); border: 1px solid #dbded7; border-radius: 1rem; background: #fff; }
+    article h3 { margin: .5rem 0 .6rem; font-size: 1.25rem; }
+    article p, ul, ol { margin: .55rem 0; }
+    ul, ol { padding-inline-start: 1.35em; }
+    li + li { margin-top: .4rem; }
+    .provenance, .source-meta, .coverage { color: #494d45; font-size: .9rem; }
+    details { border-top: 1px solid #e1e3dd; margin-top: .9rem; padding-top: .7rem; }
+    summary { width: fit-content; min-height: 2rem; cursor: pointer; font-weight: 650; }
+    dt { font-weight: 650; }
+    dd { margin: 0 0 .75rem; }
+    .video-link { font-variant-numeric: tabular-nums; }
+    .site-nav { display: flex; flex-wrap: wrap; gap: .35rem .75rem; margin: 0 0 1rem; font-size: .95rem; color: #494d45; }
+  </style>
+</head>
+<body>
+<main>
+  <nav class="site-nav" aria-label="상위 이동">
+    <a href="/daily/">← AI·개발 데일리 목록</a>
+    <span aria-hidden="true">·</span>
+    <a href="/">SOL4R1S 홈</a>
+  </nav>
+  <header class="cover">
+    <div class="issue-label">AI·개발 데일리 · <time datetime="2026-11-28">2026-11-28</time></div>
+    <h1>AI 연구 검증부터 개발 인프라까지, 성능 경쟁의 다음 관문은 신뢰와 운영이에요</h1>
+    <p>AI가 내놓은 수학 결과를 누가 검증할지, 에이전트가 만든 코드를 어떻게 안전하게 다룰지가 함께 떠오르고 있어요. 오늘은 성능 수치와 자동화 발표를 볼 때 검증 방식과 실제 운영 조건도 살펴봐요.</p>
+  </header>
+  <nav class="picks" aria-label="먼저 볼 소식">
+    <h2>먼저 볼 소식</h2>
+    <ol>
+      <li><a href="#story-1">AI로 수학 추측 100개 이상 해결했다는 16세 학생, 이제는 검증이 관건이에요</a></li>
+      <li><a href="#story-3">PyTorch, 저위험 변경을 AI 리뷰어가 승인하는 GreenLight를 도입했어요</a></li>
+      <li><a href="#story-7">구글 ABFS가 겨냥한 병목은 코드 생성보다 저장소와 빌드예요</a></li>
+    </ol>
+  </nav>
+  <section aria-labelledby="section-1">
+    <h2 id="section-1">오늘의 한 줄</h2>
+    <article id="story-1">
+      <p class="provenance">중요도 8/10 · 단일 매체 보도</p>
+      <h3>AI로 수학 추측 100개 이상 해결했다는 16세 학생, 이제는 검증이 관건이에요</h3>
+      <p>시나 데이비스는 AI 에이전트가 수학 추측 100개 이상을 해결했다고 주장했어요. 반례 발견과 추가 결과를 공개했지만, 본인도 린(Lean)으로 검증을 진행 중이라고 밝혔어요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>당사자는 올해 100개 이상의 추측을 해결했다고 주장했어요.</li>
+          <li>하룻밤 사이 추가로 55개를 해결했다는 보고도 아직 검증 중이에요.</li>
+          <li>축하와 환각 우려가 함께 나왔고, 공개 댓글 응답을 중단했어요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>결과의 개수보다 독립적으로 재현되고 형식 검증을 통과했는지가 핵심이에요. 보도 내용은 검증 완료를 뜻하지 않아요.</dd>
+          <dt>지금 할 일</dt><dd>AI타임스 기사에서 당사자의 주장과 린 검증 진행 상황을 구분해 확인해 보세요.</dd>
+          <dt>왜 지금</dt><dd>AI가 낸 연구 결과에 관심이 급증하면서, 공개 주장과 검증된 정리 사이의 경계를 어떻게 세울지가 지금의 쟁점이에요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://www.aitimes.com/news/articleView.html?idxno=217855">AI타임스</a> <span class="source-meta">· 보도 · 11-28 07:00 KST</span></li>
+        </ul>
+      </details>
+    </article>
+  </section>
+  <section aria-labelledby="section-2">
+    <h2 id="section-2">사람들 반응</h2>
+    <article id="story-2">
+      <p class="provenance">중요도 7/10 · 영상에서 확인</p>
+      <h3>나스닥 무대에 선 Anthropic CEO, AI 개발 속도 조절 약속을 재확인했어요</h3>
+      <p>CNBC 영상 제목에 따르면 다리오 아모데이 Anthropic CEO는 나스닥 연설에서 AI 개발 속도를 조절하겠다는 약속을 재확인했어요. 확인된 2초·27초·107초 장면에는 연단 발언 모습과 CNBC가 제시한 조달액·시가총액·공모 조건 자막이 담겼어요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>2초 화면에는 나스닥 무대와 CNBC가 제시한 조달액·시가총액 자막이 보여요.</li>
+          <li>27초에는 공모 조건 자막과 함께 아모데이가 연설해요.</li>
+          <li>107초 화면은 그를 Anthropic 공동창업자 겸 CEO로 소개해요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>영상 제목의 발언 취지와 CNBC 화면 자막의 기업공개 수치는 확인되지만, 구체적 연설 전문과 이행 기준은 별도 자료로 확인해야 해요.</dd>
+          <dt>지금 할 일</dt><dd>CNBC 영상의 2초·27초·107초 장면에서 연설자 소개와 화면 하단에 표시된 기업공개 조건 자막을 직접 확인해 보세요.</dd>
+          <dt>왜 지금</dt><dd>대규모 기업공개 무대에서 제시되는 AI 개발 속도 조절 메시지와 공모 규모는 기업의 성장 기대와 속도 관리 선언이 함께 주목받는 흐름을 보여줘요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://youtu.be/Uw-WaQWk-1Q">CNBC Television</a> <span class="source-meta">· 유튜브 · 발행 시각 미확인</span></li>
+          <li><a class="video-link" href="https://youtu.be/Uw-WaQWk-1Q?t=2">CNBC Television 영상 0:02</a> · 나스닥 무대에 ANTHROPIC 로고와 기업공개 종목 코드가 보이고, CNBC 자막은 810억 달러 이상 조달 및 약 1조5천억 달러의 완전희석 시가총액을 제시한다.</li>
+          <li><a class="video-link" href="https://youtu.be/Uw-WaQWk-1Q?t=27">CNBC Television 영상 0:27</a> · 다리오 아모데이가 연단에서 발언한다. 화면 하단에는 공모 주식 9억8천만 주, 주당 83달러라는 기업공개 조건이 표시된다.</li>
+          <li><a class="video-link" href="https://youtu.be/Uw-WaQWk-1Q?t=107">CNBC Television 영상 1:47</a> · 연단의 연설자를 CNBC가 다리오 아모데이, Anthropic 공동창업자 겸 CEO로 소개한다. 그의 정체와 직책을 확인해 준다.</li>
+        </ul>
+      </details>
+    </article>
+  </section>
+  <section aria-labelledby="section-3">
+    <h2 id="section-3">새로 나왔어요</h2>
+    <article id="story-3">
+      <p class="provenance">중요도 8/10 · 공식 자료·보도 대조</p>
+      <h3>PyTorch, 저위험 변경을 AI 리뷰어가 승인하는 GreenLight를 도입했어요</h3>
+      <p>InfoQ 보도에 따르면 PyTorch는 자체 유지관리자의 풀 리퀘스트를 AI 리뷰어가 승인할 수 있게 했어요. 오픈소스 도구 GreenLight는 Meta의 RADAR처럼 안전 점검, 위험 점수, LLM 리뷰를 거쳐 저위험 변경을 자동 처리한다고 해요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>InfoQ는 GreenLight를 Meta RADAR의 오픈소스 접근으로 소개해요.</li>
+          <li>Meta는 에이전트 지원으로 코드 변경량이 늘어 리뷰 부담이 커졌다고 설명했어요.</li>
+          <li>논문 제목은 저위험 코드 리뷰 자동화와 위험 보정을 다뤄요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>자동화의 관건은 모델의 자신감보다 저위험 변경을 가르는 기준과 위험 변경의 사람 검토 경로예요.</dd>
+          <dt>지금 할 일</dt><dd>InfoQ 기사와 연결된 arXiv 논문에서 RADAR의 위험 보정과 검토 효율 평가 방식을 살펴보세요.</dd>
+          <dt>왜 지금</dt><dd>코딩 에이전트가 늘면서 사람의 코드 리뷰가 병목이 되는 상황에서, 자동 승인 범위를 어디까지 설정할지가 실무 과제가 됐어요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://www.infoq.com/news/2026/11/uber-agent-spend-steady/">InfoQ</a> <span class="source-meta">· 보도 · 11-27 23:36 KST</span></li>
+          <li><a href="https://arxiv.org/abs/2605.30208">arXiv</a> <span class="source-meta">· 공식 자료 · 발행 시각 미확인</span></li>
+        </ul>
+      </details>
+    </article>
+    <article id="story-4">
+      <p class="provenance">중요도 7/10 · 공식 자료</p>
+      <h3>Neptune Graph Sessions, 에이전트별 그래프를 유휴 시 0으로 축소해요</h3>
+      <p>AWS Neptune에 에이전트나 작업 단위로 그래프를 만들고 메모리와 CPU를 자동 조절하는 Graph Sessions가 나왔어요. 유휴 상태에서는 0으로 축소하며, 시작 크기는 4 또는 8 s-NCU로 선택해요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>4 s-NCU 시작 설정에는 최대 8 s-NCU 메모리 여유가 포함돼요.</li>
+          <li>8 s-NCU 시작 설정에는 최대 16 s-NCU 메모리 여유가 포함돼요.</li>
+          <li>세션 그래프는 프로비저닝 그래프의 최소 16 m-NCU와 다른 용량 단위를 써요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>세션별 격리와 유휴 축소가 편리하지만, 실제 비용과 응답 지연은 그래프 크기와 질의 패턴으로 검증해야 해요.</dd>
+          <dt>지금 할 일</dt><dd>AWS What&#x27;s New 공지에서 지원 리전과 요금 조건을 확인한 뒤, 테스트용 그래프 세션의 유휴 축소를 확인해 보세요.</dd>
+          <dt>왜 지금</dt><dd>GraphRAG와 에이전트는 대화별 그래프가 유용하지만, 이용량이 들쭉날쭉하면 상시 프로비저닝 비용이 부담이었어요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-neptune-graph-sessions-generally-available">AWS What&#x27;s New</a> <span class="source-meta">· 공식 자료 · 11-28 04:00 KST</span></li>
+        </ul>
+      </details>
+    </article>
+    <article id="story-5">
+      <p class="provenance">중요도 7/10 · 공식 자료·보도 대조</p>
+      <h3>Firefox Smart Window에 Mistral Small 4 선택지가 추가됐어요</h3>
+      <p>InfoQ 보도에 따르면 Mozilla가 베타 중인 Firefox Smart Window에 Mistral의 오픈 웨이트 모델 Small 4를 프랑스·미국·캐나다 이용자 권장 모델로 추가했어요. 연결된 Hugging Face 모델 페이지는 대화·추론·코딩을 아우르는 하이브리드 모델이라고 설명해요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>Mozilla는 Mistral Small 4를 Smart Window의 선택 모델로 추가했어요.</li>
+          <li>Mistral은 제로 데이터 보존에 동의했다고 InfoQ가 전해요.</li>
+          <li>모델 카드에는 추론 모드 전환과 이미지·문서 이해 기능이 소개돼요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>오픈 웨이트 모델 제공은 선택권을 늘리지만, 베타 이용 가능 지역과 데이터 처리 조건을 확인해야 해요.</dd>
+          <dt>지금 할 일</dt><dd>Firefox Smart Window 베타 설정에서 모델 선택 메뉴와 데이터 보존 안내를 확인하고, Hugging Face 모델 카드에서 모드별 기능을 살펴보세요.</dd>
+          <dt>왜 지금</dt><dd>브라우저 AI가 특정 사업자 모델에 고정되는 흐름 속에서, Mozilla는 이용자가 고를 수 있는 모델 선택지를 넓히려 해요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://www.infoq.com/news/2026/11/mozilla-mistral-ai-smart-window/">InfoQ</a> <span class="source-meta">· 보도 · 11-27 15:58 KST</span></li>
+          <li><a href="https://huggingface.co/mistralai/Mistral-Small-4-119B-2603">Hugging Face</a> <span class="source-meta">· 공식 자료 · 발행 시각 미확인</span></li>
+        </ul>
+      </details>
+    </article>
+    <article id="story-6">
+      <p class="provenance">중요도 7/10 · 단일 매체 보도</p>
+      <h3>ETRI FeDiT 2.0, 서로 다른 디지털 트윈을 연결해 통합 분석해요</h3>
+      <p>ETRI가 개별 디지털 트윈의 데이터와 기능을 연결하는 FeDiT 2.0을 오픈소스로 공개했다고 보도됐어요. 통합 모니터링과 예측, 시뮬레이션을 지원하고 15개 기관이 함께 개발했어요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>교통·환경·에너지 데이터를 함께 분석하는 활용 사례가 제시됐어요.</li>
+          <li>AI 예측과 물리 해석·시뮬레이션 결과를 통합할 수 있어요.</li>
+          <li>상호운용성과 확산을 위해 TTA 표준 10종이 제정됐다고 해요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>디지털 트윈을 연결하면 분석 범위가 넓어지지만, 데이터 동기화와 모델 간 호환이 실제 운영 성능을 좌우해요.</dd>
+          <dt>지금 할 일</dt><dd>인공지능신문 기사에서 7개 주요 기능과 TTA 표준 10종을 확인하고, 공개된 FeDiT 2.0 저장소에서 연동 사례를 찾아보세요.</dd>
+          <dt>왜 지금</dt><dd>도시·제조·교통처럼 서로 다른 시스템의 데이터를 함께 써야 하는 현장에서는 상호운용성이 AI 분석의 출발점이에요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://www.aitimes.kr/news/articleView.html?idxno=42928">인공지능신문</a> <span class="source-meta">· 보도 · 11-27 18:10 KST</span></li>
+        </ul>
+      </details>
+    </article>
+  </section>
+  <section aria-labelledby="section-4">
+    <h2 id="section-4">한 입 지식</h2>
+    <article id="story-7">
+      <p class="provenance">중요도 8/10 · 단일 매체 보도</p>
+      <h3>구글 ABFS가 겨냥한 병목은 코드 생성보다 저장소와 빌드예요</h3>
+      <p>구글이 대규모 Git 저장소 작업을 가속하는 오픈소스 프레임워크 ABFS를 공개했다고 보도됐어요. 자체 실험에서는 안드로이드 소스 체크아웃을 약 36분에서 8초 미만으로, 전체 빌드를 약 80분에서 2분여로 줄였다고 해요.</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <ul>
+          <li>안드로이드 17 오픈소스 프로젝트(AOSP)는 1,084개 Git 저장소와 약 162만 개 파일로 구성돼요.</li>
+          <li>보도된 수치는 구글 자체 실험 결과예요.</li>
+          <li>CI와 개발자 작업공간 사이에서 기존 빌드 결과를 재사용하는 공유 캐시가 포함돼요.</li>
+        </ul>
+        <dl>
+          <dt>얻는 것</dt><dd>에이전트 개발 생산성은 생성 속도만으로 정해지지 않아요. 대형 저장소에서 체크아웃·캐시·빌드 시간을 함께 봐야 해요.</dd>
+          <dt>지금 할 일</dt><dd>인공지능신문 기사에서 ABFS의 공유 캐시 설명을 읽고, 팀 CI에서 체크아웃과 빌드 시간을 따로 측정해 보세요.</dd>
+          <dt>왜 지금</dt><dd>AI 코딩 에이전트가 코드를 더 빨리 만들수록 다운로드와 빌드 대기 시간이 개발 흐름의 병목으로 드러나고 있어요.</dd>
+        </dl>
+        <h4>출처</h4>
+        <ul>
+          <li><a href="https://www.aitimes.kr/news/articleView.html?idxno=42930">인공지능신문</a> <span class="source-meta">· 보도 · 11-27 18:47 KST</span></li>
+        </ul>
+      </details>
+    </article>
+  </section>
+  <section class="coverage" aria-labelledby="coverage">
+    <h2 id="coverage">수집 범위</h2>
+    <p>수집 08:00 KST · 최근 36시간 · 기사 후보 29건 · 선정 7건</p>
+    <p>영상 후보 17편 · 영상 확인 1편</p>
+  </section>
+</main>
+</body>
+</html>
